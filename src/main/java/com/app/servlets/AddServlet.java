@@ -1,7 +1,7 @@
 package com.app.servlets;
 
 import com.app.entities.User;
-import com.app.model.Model;
+import com.app.storage.UserList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -23,8 +23,8 @@ public class AddServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("pass");
         User user = new User(name, password);
-        Model model = Model.getInstance();
-        model.add(user);
+        UserList userList = UserList.getInstance();
+        userList.add(user);
 
         req.setAttribute("userName", name);
         doGet(req, resp);

@@ -1,4 +1,4 @@
-package com.app.model;
+package com.app.storage;
 
 import com.app.entities.User;
 
@@ -6,26 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Model {
+public class UserList {
 
-    private static final Model instance = new Model();
+    private static final UserList instance = new UserList();
 
-    private final List<User> model;
+    private final List<User> userList;
 
-    private Model() {
-        model = new ArrayList<>();
+    private UserList() {
+        userList = new ArrayList<>();
     }
 
-    public static Model getInstance() {
+    public static UserList getInstance() {
         return instance;
     }
 
     public void add(User user) {
-        model.add(user);
+        userList.add(user);
     }
 
     public List<String> list() {
-        return model.stream()
+        return userList.stream()
                 .map(User::getName)
                 .collect(Collectors.toList());
     }
