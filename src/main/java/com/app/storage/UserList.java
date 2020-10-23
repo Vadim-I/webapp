@@ -30,4 +30,8 @@ public class UserList {
                 .collect(Collectors.toList());
     }
 
+    public void delete(User user) {
+        userList.remove(user);
+    }
+
 }

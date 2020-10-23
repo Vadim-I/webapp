@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Add new user</title>
+    <title>Delete user</title>
 </head>
 
 <body>
@@ -12,12 +12,12 @@
 <div>
     <%
         if (request.getAttribute("userName") != null) {
-            out.println("<p>User '" + request.getAttribute("userName") + "' added!</p>");
+            out.println("<p>User '" + request.getAttribute("userName") + "' deleted!</p>");
         }
     %>
     <div>
         <div>
-            <h2>Add user</h2>
+            <h2>Delete user</h2>
         </div>
 
         <form method="post">
@@ -37,3 +37,4 @@
 </div>
 </body>
 </html>
+
